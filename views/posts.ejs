@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<head>
+  <title>My Crud Blog</title>
+</head>
+<link rel="stylesheet">
+<body>
+  <ul>
+    <% posts.forEach(function(post) { %>
+      <li class = "list">
+        <% post.title %>
+        <% post.author %>
+        <% post.date %>
+        <% post.text %>
+      </li>
+    <% }) %>
+  </ul>
+
+</body>

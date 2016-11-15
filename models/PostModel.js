@@ -3,11 +3,11 @@ const Schema   = mongoose.Schema;
 
 // TODO: Write your PostModel schema here
 // Hint: Don't for get to export it!
-const blogSchema = new Schema ({
-  'title' : String,
+const PostModel = new Schema ({
+  'title' : {type: String, required: true},
   'author': {type: String, required: true},
-  'date': String,
-  'text': String
+  'date': {type: String, required: true},
+  'text': {type: String, required: true}
 });
 
-module.exports = mongoose.module('posts', blogSchema);
+module.exports = mongoose.model('posts', PostModel);
