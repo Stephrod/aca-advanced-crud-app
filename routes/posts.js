@@ -7,9 +7,13 @@ const PostsController = require ('../controllers/PostsController');
 // TODO: Add your routes to the route here.
 router.get('/', PostsController.list);
 
+router.post('/', PostsController.create);
+
+router.get('/new', PostsController.form);
+
 router.get('/:id', PostsController.show);
 
-router.post('/', PostsController.create);
+router.get('/:id/edit', PostsController.edit);
 
 router.put('/:id', PostsController.update);
 

@@ -6,13 +6,33 @@
 <body>
   <ul>
     <% posts.forEach(function(post) { %>
-      <li class = "list">
-        <% post.title %>
-        <% post.author %>
-        <% post.date %>
-        <% post.text %>
+      <li>
+        <%= post.title %>
+        <%= post.author %>
+        <%= post.date %>
+        <%= post.text %>
       </li>
-    <% }) %>
-  </ul>
-
+      <form method="GET" action="/posts/new">
+        <button type="Submit">
+          New
+        </button>
+      </form>
+      <form method="GET" action="/posts/<%= post._id %>">
+        <button type="Submit">
+          View
+        </button>
+      </form>
+      <form method="GET" action="/posts/<%= post._id %>/edit">
+        <button type="Submit">
+          Edit
+        </button>
+      </form>
+      <form method="POST" action="/posts/<%= post._id %>?_method=DELETE">
+        <button type="Submit">
+          Delete
+        </button>
+      </form>
+      <%  }) %>
+    </ul>
 </body>
+</html>>
